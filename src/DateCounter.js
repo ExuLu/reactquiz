@@ -2,9 +2,21 @@ import { useReducer } from 'react';
 
 function reducer(state, action) {
   console.log(state, action);
-  if (action.type === 'dec') return { ...state, count: state.count - 1 };
-  if (action.type === 'inc') return { ...state, count: state.count + 1 };
-  if (action.type === 'setCount') return { ...state, count: action.payload };
+
+  switch (action.type) {
+    case 'dec':
+      return { ...state, count: state.count - 1 };
+    case 'inc':
+      return { ...state, count: state.count + 1 };
+    case 'setCount':
+      return { ...state, count: action.payload };
+    default:
+      throw new Error('Uknown actoin');
+  }
+
+  //   if (action.type === 'dec') return { ...state, count: state.count - 1 };
+  //   if (action.type === 'inc') return { ...state, count: state.count + 1 };
+  //   if (action.type === 'setCount') return { ...state, count: action.payload };
 }
 
 function DateCounter() {

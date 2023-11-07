@@ -15,10 +15,6 @@ function reducer(state, action) {
     default:
       throw new Error('Uknown actoin');
   }
-
-  //   if (action.type === 'dec') return { ...state, count: state.count - 1 };
-  //   if (action.type === 'inc') return { ...state, count: state.count + 1 };
-  //   if (action.type === 'setCount') return { ...state, count: action.payload };
 }
 
 function DateCounter() {
@@ -32,14 +28,10 @@ function DateCounter() {
 
   const dec = function () {
     dispatch({ type: 'dec' });
-    // setCount((count) => count - 1);
-    // setCount((count) => count - step);
   };
 
   const inc = function () {
     dispatch({ type: 'inc' });
-    // setCount((count) => count + 1);
-    // setCount((count) => count + step);
   };
 
   const defineCount = function (e) {
@@ -47,14 +39,12 @@ function DateCounter() {
   };
 
   const defineStep = function (e) {
-    // setStep(Number(e.target.value));
     dispatch({ type: 'setStep', payload: Number(e.target.value) });
   };
 
   const reset = function () {
     dispatch({ type: 'setCount', payload: 0 });
     dispatch({ type: 'setStep', payload: 1 });
-    // setStep(1);
   };
 
   return (

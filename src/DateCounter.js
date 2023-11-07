@@ -5,9 +5,9 @@ function reducer(state, action) {
 
   switch (action.type) {
     case 'dec':
-      return { ...state, count: state.count - 1 };
+      return { ...state, count: state.count - state.step };
     case 'inc':
-      return { ...state, count: state.count + 1 };
+      return { ...state, count: state.count + state.step };
     case 'setCount':
       return { ...state, count: action.payload };
     case 'setStep':

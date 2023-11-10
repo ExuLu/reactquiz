@@ -1,15 +1,11 @@
-import Option from './Option';
+import Options from './Options';
 
 function Question({ question }) {
   console.log(question);
   return (
     <div>
       <h4>{question.question}</h4>
-      <div className='options'>
-        {question.options.map((option, i) => (
-          <Option key={option} option={option} index={i} />
-        ))}
-      </div>
+      <Options questionObj={question} />
     </div>
   );
 }

@@ -5,11 +5,11 @@ function Question({ question }) {
   return (
     <div>
       <h4>{question.question}</h4>
-      <ul className='options'>
+      <div className='options'>
         {question.options.map((option, i) => (
           <Option key={option} option={option} index={i} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

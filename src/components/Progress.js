@@ -1,4 +1,9 @@
-function Progress({ index, numQuestions, points, maxPossiblePoints, answer }) {
+import { useQuestions } from '../hooks/useQuestions';
+
+function Progress() {
+  const { index, points, answer, numQuestions, maxPossiblePoints } =
+    useQuestions();
+
   return (
     <header className='progress'>
       <progress max={numQuestions} value={index + Number(answer !== null)} />

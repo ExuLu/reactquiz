@@ -3,11 +3,11 @@ import Options from './Options';
 import { useQuestions } from '../hooks/useQuestions';
 
 const Question = () => {
-  const { question, dispatch, answer } = useQuestions();
+  const { questions, index } = useQuestions();
   return (
     <div>
-      <h4>{question.question}</h4>
-      <Options questionObj={question} dispatch={dispatch} answer={answer} />
+      <h4>{questions[index].question}</h4>
+      <Options />
     </div>
   );
 };

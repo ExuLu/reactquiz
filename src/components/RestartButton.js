@@ -1,4 +1,8 @@
-function RestartButton({ dispatch }) {
+import { useQuestions } from '../hooks/useQuestions';
+
+const RestartButton = () => {
+  const { dispatch } = useQuestions();
+
   return (
     <button
       className='btn btn-ui'
@@ -7,6 +11,6 @@ function RestartButton({ dispatch }) {
       Restart Quiz
     </button>
   );
-}
+};
 
 export default RestartButton;

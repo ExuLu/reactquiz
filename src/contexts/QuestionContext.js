@@ -78,6 +78,9 @@ const QuestionProvider = ({ children }) => {
       .catch((err) => dispatch({ type: 'dataFailed' }));
   }, []);
 
+  const numQuestions = questions.length;
+  const maxPossiblePoints = questions.reduce((acc, cur) => acc + cur.points, 0);
+
   return (
     <QuestionContext.Provider
       value={{
@@ -89,6 +92,8 @@ const QuestionProvider = ({ children }) => {
         highscore,
         secondsRemaining,
         dispatch,
+        numQuestions,
+        maxPossiblePoints,
       }}
     >
       {children}

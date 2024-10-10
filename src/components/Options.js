@@ -1,13 +1,17 @@
-function Options({ questionObj, dispatch, answer }) {
+import { useQuestions } from '../hooks/useQuestions';
+
+const Options = () => {
+  const { questions, index, dispatch, answer } = useQuestions();
+
   const hasAnswered = answer !== null;
 
   return (
     <div className='options'>
-      {questionObj.options.map((option, i) => (
+      {questions[index].options.map((option, i) => (
         <button
           className={`btn btn-option ${answer === i ? 'answer' : ''} ${
             hasAnswered
-              ? i === questionObj.correctOption
+              ? i === questions[index].correctOption
                 ? 'correct'
                 : 'wrong'
               : ''
@@ -21,6 +25,6 @@ function Options({ questionObj, dispatch, answer }) {
       ))}
     </div>
   );
-}
+};
 
 export default Options;

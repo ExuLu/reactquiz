@@ -1,8 +1,13 @@
 import { useEffect } from 'react';
 
-function Timer({ dispatch, secondsRemaining }) {
+import { useQuestions } from '../hooks/useQuestions';
+
+const Timer = () => {
+  const { dispatch, secondsRemaining } = useQuestions();
+
   const minutes = Math.floor(secondsRemaining / 60);
   const seconds = secondsRemaining % 60;
+
   useEffect(
     function () {
       const id = setInterval(function () {
@@ -18,10 +23,10 @@ function Timer({ dispatch, secondsRemaining }) {
   return (
     <div className='timer'>
       {minutes < 10 && '0'}
-      {minutes}:{seconds < 10 && '0'}{seconds}
-      
+      {minutes}:{seconds < 10 && '0'}
+      {seconds}
     </div>
   );
-}
+};
 
 export default Timer;

@@ -1,7 +1,3 @@
-function Main({ children }) {
-  return <main className='main'>
-    {children}
-  </main>;
-}
+const Main = ({ children }) => <main className='main'>{children}</main>;
 
 export default Main;

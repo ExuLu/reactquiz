@@ -1,6 +1,6 @@
 import { useQuestions } from '../hooks/useQuestions';
 
-function Progress() {
+const Progress = () => {
   const { index, points, answer, numQuestions, maxPossiblePoints } =
     useQuestions();
 
@@ -15,6 +15,6 @@ function Progress() {
       </p>
     </header>
   );
-}
+};
 
 export default Progress;

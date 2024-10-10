@@ -1,6 +1,11 @@
-function NextButton({ dispatch, answer, index, numQuestions }) {
+import { useQuestions } from '../hooks/useQuestions';
+
+const NextButton = () => {
+  const { dispatch, answer, index, numQuestions } = useQuestions();
+
   if (answer === null) return null;
-  if (index < numQuestions-1)
+
+  if (index < numQuestions - 1)
     return (
       <button
         className='btn btn-ui'
@@ -9,7 +14,8 @@ function NextButton({ dispatch, answer, index, numQuestions }) {
         Next Question
       </button>
     );
-    if (index === numQuestions-1)
+
+  if (index === numQuestions - 1)
     return (
       <button
         className='btn btn-ui'
@@ -18,6 +24,6 @@ function NextButton({ dispatch, answer, index, numQuestions }) {
         Finish
       </button>
     );
-}
+};
 
 export default NextButton;

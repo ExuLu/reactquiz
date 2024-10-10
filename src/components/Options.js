@@ -1,17 +1,17 @@
 import { useQuestions } from '../hooks/useQuestions';
 
-const Options = () => {
-  const { questions, index, dispatch, answer } = useQuestions();
+const Options = ({ question }) => {
+  const { dispatch, answer } = useQuestions();
 
   const hasAnswered = answer !== null;
 
   return (
     <div className='options'>
-      {questions[index].options.map((option, i) => (
+      {question.options.map((option, i) => (
         <button
           className={`btn btn-option ${answer === i ? 'answer' : ''} ${
             hasAnswered
-              ? i === questions[index].correctOption
+              ? i === question.correctOption
                 ? 'correct'
                 : 'wrong'
               : ''

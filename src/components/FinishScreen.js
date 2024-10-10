@@ -1,6 +1,11 @@
-function FinishScreen({ points, maxPossiblePoints, highscore }) {
+import { useQuestions } from '../hooks/useQuestions';
+
+const FinishScreen = () => {
+  const { points, maxPossiblePoints, highscore } = useQuestions();
+
   const percentage = (points / maxPossiblePoints) * 100;
   let emoji;
+
   if (percentage === 100) emoji = '🥇';
   if (percentage >= 80 && percentage < 100) emoji = '🎉';
   if (percentage >= 50 && percentage < 80) emoji = '🙃';
@@ -16,6 +21,6 @@ function FinishScreen({ points, maxPossiblePoints, highscore }) {
       <p className='highscore'>(Highscore: {highscore} points)</p>
     </>
   );
-}
+};
 
 export default FinishScreen;
